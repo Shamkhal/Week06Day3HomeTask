@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		html, body{
+			margin: 0;
+			padding: 0;
+		}
+		#capsMaker{		
+			width: 900px;
+			margin: 20px auto;
+		}
+		.capsFrame, .capsText, .settingsFrame{
+			width: 100%;
+			
+		}
+		.capsFrame{
+			position: relative;
+		}
+		.imgFrame img{
+			width: 100%;
+		}
+		.capsText{
+			background: red;
+			color: white;
+			padding: 10px;
+			width: calc(100% - 20px);
+			margin-top: -60px;
+			position: absolute;
+			bottom: 0;
+		}
+		.capsText p{
+			margin: 0;
+		}
+		.settingsFrame input{
+			padding: 10px 20px;
+			width: calc(100% - 42px);
+			border: 1px solid red;
+			margin: 10px 0;
+		}
+		.settingsFrame input:focus{
+			background: lightgray;
+			color: black;
+		}.settingsFrame button{
+			border: none;
+			background: red;
+			color: white;
+			padding: 5px 10px;
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+	<div id="capsMaker">
+		<div class="capsFrame">
+			<div class="imgFrame">
+				<img src="images/04.jpg">
+			</div>
+			<div class="capsText">
+				<p>Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem  </p>
+			</div>
+		</div>
+		<div class="settingsFrame">
+			<input type="text" placeholder="Add your images' link">
+			<button onclick="addImage()">ADD Image</button>
+			<input type="text" placeholder="Add your images' caps">
+			<button onclick="addText()">ADD Text</button>
+			<hr>
+			<button onclick="ChangeImageBorder()">Change Image Border</button>
+			<button onclick="ChangeTextBackgroundColor()">Change Text Background-Color</button>
+			<button onclick="ChangeTextColor()">Change Text Color</button>
+			<button onclick="ChangeTextPositionToTop()">Change Text Position To Top</button>
+		<div>
+	</div>
+
+
+
+	<script>
+		var addImage=function()  {
+			var capsImg=document.getElementsByTagName("input")[0].value;
+		if (capsImg=="") {
+			alert("no image");
+		}
+		else{
+			document.getElementsByClassName("imgFrame")[0].getElementsByTagName("img")[0].src="images/"+capsImg;
+		}
+		}
+
+		function addText() {
+			var capsText=document.getElementsByTagName('input')[1].value;
+			if (capsText=="") {
+			alert("no text");
+		}
+		else{
+			document.getElementsByClassName("capsText")[0].innerHTML="<p>"+capsText+"</p>"
+		}
+	}
+
+
+
+	//HOMETASK
+
+	var second= document.createElement("input");
+	document.body.appendChild(second);	
+	document.getElementsByTagName('input')[2].style.color= "black";
+	document.getElementsByTagName('input')[2].style.border="1px solid red";
+	document.getElementsByTagName('input')[2].style.margin="10px 510px";
+	document.getElementsByTagName('input')[2].style.marginRight="0px";
+	document.getElementsByTagName('input')[2].style.padding="10px 20px";
+	document.getElementsByTagName('input')[2].style.width="calc(100% - 1060px)";
+	document.getElementsByTagName("input")[2].placeholder="Change Image Border";	
+	function ChangeImageBorder() 
+	{
+		var border=document.getElementsByTagName("input")[2].value;
+		if (border=="") {
+			alert("no  border change");
+		}
+		else{
+			document.getElementsByTagName("img")[0].style.border=border;
+		}
+	 	
+	}
+	
+
+	var third= document.createElement("input");
+	document.body.appendChild(third);		
+	document.getElementsByTagName('input')[3].style.color= "black";
+	document.getElementsByTagName('input')[3].style.border="1px solid red";
+	document.getElementsByTagName('input')[3].style.margin="10px 510px";
+	document.getElementsByTagName('input')[3].style.marginRight="0px";
+	document.getElementsByTagName('input')[3].style.padding="10px 20px";
+	document.getElementsByTagName('input')[3].style.width="calc(100% - 1060px)";
+	document.getElementsByTagName("input")[3].placeholder="Change Text Color";
+	
+	function ChangeTextColor() {
+		var color=document.getElementsByTagName('input')[3].value;
+		if (color=="") {
+			alert("no color change");
+		}
+		else{
+			document.getElementsByClassName('capsText')[0].style.color=color;
+		}
+		 
+		
+	}
+
+
+	var fourth= document.createElement("input");
+	document.body.appendChild(fourth);		
+	document.getElementsByTagName('input')[4].style.color= "black";
+	document.getElementsByTagName('input')[4].style.border="1px solid red";
+	document.getElementsByTagName('input')[4].style.margin="10px 510px";
+	document.getElementsByTagName('input')[4].style.marginRight="0px";
+	document.getElementsByTagName('input')[4].style.padding="10px 20px";
+	document.getElementsByTagName('input')[4].style.width="calc(100% - 1060px)";
+	document.getElementsByTagName("input")[4].placeholder="Change Text Background-Color";
+
+	function ChangeTextBackgroundColor() {
+		var backgroundColor=document.getElementsByTagName('input')[4].value;
+		if (backgroundColor=="") {
+			alert("no backgroundColor change");
+		}
+		else{
+			document.getElementsByClassName('capsText')[0].style.backgroundColor=backgroundColor;
+		}
+		
+	}
+
+
+
+
+	var fifth= document.createElement("input");
+	document.body.appendChild(fifth);		
+	document.getElementsByTagName('input')[5].style.color= "black";
+	document.getElementsByTagName('input')[5].style.border="1px solid red";
+	document.getElementsByTagName('input')[5].style.margin="10px 510px";
+	document.getElementsByTagName('input')[5].style.marginRight="0px";
+	document.getElementsByTagName('input')[5].style.padding="10px 20px";
+	document.getElementsByTagName('input')[5].style.width="calc(100% - 1060px)";
+	document.getElementsByTagName("input")[5].placeholder="Change Text Position To Top";
+	
+	function ChangeTextPositionToTop() {
+		var position=document.getElementsByTagName("input")[5].value;
+		if (position=="") {
+			alert("no position change");
+		}
+		else{
+			document.getElementsByClassName('capsText')[0].style.marginBottom=position;
+		}
+		
+	}
+
+	</script>
+</body>
+</html>
